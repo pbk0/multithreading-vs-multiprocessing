@@ -40,8 +40,9 @@ def visualize_runtimes(results, title):
     return stop[-1] - start[0]
 
 
-plt.subplot(1, 2, 1)
-visualize_runtimes(multithreading(cpu_heavy, range(4), 4), "Multithreading")
-plt.subplot(1, 2, 2)
-visualize_runtimes(multiprocessing(cpu_heavy, range(4), 4), "Multiprocessing")
-plt.show()
+if __name__ == '__main__':
+    plt.subplot(1, 2, 1)
+    visualize_runtimes(multithreading(cpu_heavy, range(4), 4), "Multithreading")
+    plt.subplot(1, 2, 2)
+    visualize_runtimes(multiprocessing(cpu_heavy, range(4), 4), "Multiprocessing")
+    plt.show()
